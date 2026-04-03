@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A1000001 /* VideoNicerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001 /* VideoNicerApp.swift */; };
 		A1000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002 /* ContentView.swift */; };
+		A1000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000005 /* Assets.xcassets */; };
 		B1000001 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2000001 /* FinderSync.swift */; };
 		B1000002 /* FinderSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2000002 /* FinderSync.framework */; };
 		B1000003 /* ConvertToMP4Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B2000010 /* ConvertToMP4Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -43,6 +44,7 @@
 		A2000002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2000003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2000004 /* VideoNicer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VideoNicer.entitlements; sourceTree = "<group>"; };
+		A2000005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2000010 /* VideoNicer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoNicer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2000001 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		B2000002 /* FinderSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FinderSync.framework; path = System/Library/Frameworks/FinderSync.framework; sourceTree = SDKROOT; };
@@ -85,6 +87,7 @@
 			children = (
 				A2000001 /* VideoNicerApp.swift */,
 				A2000002 /* ContentView.swift */,
+				A2000005 /* Assets.xcassets */,
 				A2000003 /* Info.plist */,
 				A2000004 /* VideoNicer.entitlements */,
 			);
@@ -120,6 +123,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXResourcesBuildPhase section */
+		A6000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1000003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		A5000001 /* VideoNicer */ = {
 			isa = PBXNativeTarget;
@@ -127,6 +141,7 @@
 			buildPhases = (
 				A6000001 /* Sources */,
 				A3000001 /* Frameworks */,
+				A6000002 /* Resources */,
 				BA000001 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
@@ -269,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VideoNicer/VideoNicer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -296,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = VideoNicer/VideoNicer.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
