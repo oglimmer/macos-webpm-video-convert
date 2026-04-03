@@ -2,6 +2,8 @@ import Cocoa
 import FinderSync
 
 class FinderSync: FIFinderSync {
+    private static let supportedExtensions: Set<String> = ["webm", "mp4", "wmv", "avi", "mov", "mpg", "mpeg"]
+
     override init() {
         super.init()
         FIFinderSyncController.default().directoryURLs = [URL(fileURLWithPath: "/")]
@@ -11,7 +13,7 @@ class FinderSync: FIFinderSync {
         guard menuKind == .contextualMenuForItems else { return nil }
 
         guard let items = FIFinderSyncController.default().selectedItemURLs(),
-              items.contains(where: { $0.pathExtension.lowercased() == "webm" }) else {
+              items.contains(where: { Self.supportedExtensions.contains($0.pathExtension.lowercased()) }) else {
             return nil
         }
 
@@ -28,9 +30,9 @@ class FinderSync: FIFinderSync {
 
     @objc func convertToMP4(_ sender: Any?) {
         guard let items = FIFinderSyncController.default().selectedItemURLs() else { return }
-        let webmFiles = items.filter { $0.pathExtension.lowercased() == "webm" }
+        let videoFiles = items.filter { Self.supportedExtensions.contains($0.pathExtension.lowercased()) }
 
-        for file in webmFiles {
+        for file in videoFiles {
             // Use custom URL scheme to pass file path to the main app.
             // This avoids sandbox restrictions on passing file URLs directly.
             var components = URLComponents()

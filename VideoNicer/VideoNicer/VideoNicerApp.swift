@@ -2,6 +2,8 @@ import SwiftUI
 
 @Observable
 class AppState {
+    static let supportedExtensions: Set<String> = ["webm", "mp4", "wmv", "avi", "mov", "mpg", "mpeg"]
+
     var fileURL: URL?
     var isConverting = false
     var result: ConversionResult?
@@ -19,7 +21,15 @@ class AppState {
         result = nil
 
         let settings = ConversionSettings.shared
-        let outputURL = inputURL.deletingPathExtension().appendingPathExtension("mp4")
+        let outputURL: URL
+        if inputURL.pathExtension.lowercased() == "mp4" {
+            let base = inputURL.deletingPathExtension()
+            outputURL = base.deletingLastPathComponent()
+                .appendingPathComponent(base.lastPathComponent + "_converted")
+                .appendingPathExtension("mp4")
+        } else {
+            outputURL = inputURL.deletingPathExtension().appendingPathExtension("mp4")
+        }
 
         Task.detached {
             do {
@@ -84,7 +94,7 @@ struct VideoNicerApp: App {
                     } else {
                         fileURL = url
                     }
-                    guard fileURL.pathExtension.lowercased() == "webm" else { return }
+                    guard AppState.supportedExtensions.contains(fileURL.pathExtension.lowercased()) else { return }
                     appState.fileURL = fileURL
                     appState.result = nil
                     appState.autoConvert = true

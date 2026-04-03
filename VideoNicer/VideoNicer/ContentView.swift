@@ -70,7 +70,7 @@ struct ContentView: View {
                 Image(systemName: "arrow.down.doc")
                     .font(.system(size: 36))
                     .foregroundStyle(.secondary)
-                Text("Drop a .webm file here")
+                Text("Drop a video file here")
                     .font(.title3)
                     .foregroundStyle(.secondary)
             }
@@ -124,9 +124,9 @@ struct ContentView: View {
         provider.loadItem(forTypeIdentifier: "public.file-url", options: nil) { data, _ in
             guard let data = data as? Data,
                   let url = URL(dataRepresentation: data, relativeTo: nil),
-                  url.pathExtension.lowercased() == "webm" else {
+                  AppState.supportedExtensions.contains(url.pathExtension.lowercased()) else {
                 DispatchQueue.main.async {
-                    self.appState.result = .error("Please drop a .webm file.")
+                    self.appState.result = .error("Unsupported file type. Supported: \(AppState.supportedExtensions.sorted().joined(separator: ", "))")
                 }
                 return
             }

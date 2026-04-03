@@ -33,4 +33,4 @@ cp -R "$BUILT_APP" "$DEST"
 
 echo "Installed '$APP' to /Applications/"
 echo ""
-echo "Done! Right-click any .webm file in Finder → Open With → VideoNicer"
+echo "Done! Right-click any video file in Finder → Open With → VideoNicer"
