@@ -10,6 +10,8 @@
 		A1000001 /* VideoNicerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000001 /* VideoNicerApp.swift */; };
 		A1000002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000002 /* ContentView.swift */; };
 		A1000003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000005 /* Assets.xcassets */; };
+		A1000004 /* ConversionSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000006 /* ConversionSettings.swift */; };
+		A1000005 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000007 /* SettingsView.swift */; };
 		B1000001 /* FinderSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2000001 /* FinderSync.swift */; };
 		B1000002 /* FinderSync.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2000002 /* FinderSync.framework */; };
 		B1000003 /* ConvertToMP4Extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B2000010 /* ConvertToMP4Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -45,6 +47,8 @@
 		A2000003 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2000004 /* VideoNicer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VideoNicer.entitlements; sourceTree = "<group>"; };
 		A2000005 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A2000006 /* ConversionSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionSettings.swift; sourceTree = "<group>"; };
+		A2000007 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A2000010 /* VideoNicer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoNicer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2000001 /* FinderSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderSync.swift; sourceTree = "<group>"; };
 		B2000002 /* FinderSync.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FinderSync.framework; path = System/Library/Frameworks/FinderSync.framework; sourceTree = SDKROOT; };
@@ -87,6 +91,8 @@
 			children = (
 				A2000001 /* VideoNicerApp.swift */,
 				A2000002 /* ContentView.swift */,
+				A2000006 /* ConversionSettings.swift */,
+				A2000007 /* SettingsView.swift */,
 				A2000005 /* Assets.xcassets */,
 				A2000003 /* Info.plist */,
 				A2000004 /* VideoNicer.entitlements */,
@@ -206,6 +212,8 @@
 			files = (
 				A1000001 /* VideoNicerApp.swift in Sources */,
 				A1000002 /* ContentView.swift in Sources */,
+				A1000004 /* ConversionSettings.swift in Sources */,
+				A1000005 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

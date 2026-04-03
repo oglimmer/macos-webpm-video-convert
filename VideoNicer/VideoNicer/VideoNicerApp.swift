@@ -18,6 +18,7 @@ class AppState {
         isConverting = true
         result = nil
 
+        let settings = ConversionSettings.shared
         let outputURL = inputURL.deletingPathExtension().appendingPathExtension("mp4")
 
         Task.detached {
@@ -26,8 +27,8 @@ class AppState {
                 process.executableURL = URL(fileURLWithPath: "/opt/homebrew/bin/ffmpeg")
                 process.arguments = [
                     "-i", inputURL.path,
-                    "-c:v", "libx264", "-crf", "23", "-preset", "medium",
-                    "-c:a", "aac", "-b:a", "192k",
+                    "-c:v", "libx264", "-crf", settings.crfValue, "-preset", settings.preset,
+                    "-c:a", "aac", "-b:a", settings.audioBitrate,
                     "-movflags", "+faststart",
                     "-y", outputURL.path
                 ]
@@ -90,6 +91,11 @@ struct VideoNicerApp: App {
                 }
         }
         .windowResizability(.contentSize)
+
+        Settings {
+            SettingsView()
+        }
+
         .commands {
             CommandGroup(after: .newItem) {
                 Button("Convert to MP4") {
